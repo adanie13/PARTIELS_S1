@@ -18,9 +18,19 @@ int main() {
   cout << "3. Estimer le coût de la location" << endl;
   cout << "4. Quitter l'application" << endl << endl;
 
+  cout << "Quel est votre choix ?: ";
   cin >> choix;
-  
+  cout << choix << endl;
 
+  if (choix == 1) {
+    cout << "***Emprunter un Vélô électrique***" << endl;
+  } else if (choix == 2) {
+    cout << "***Restituer un Vélô électrique***" << endl;
+  } else if (choix == 3) {
+    cout << "***Estimer le coût de la location***" << endl;
+  } else if (choix == 4) {
+    cout << "***Quitter l'application***" << endl;
+  }
 
   return 0;
 }

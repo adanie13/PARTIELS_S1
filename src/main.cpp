@@ -22,15 +22,39 @@ int main() {
   cin >> choix;
   cout << choix << endl;
 
-  if (choix == 1) {
-    cout << "***Emprunter un Vélô électrique***" << endl;
-  } else if (choix == 2) {
-    cout << "***Restituer un Vélô électrique***" << endl;
-  } else if (choix == 3) {
-    cout << "***Estimer le coût de la location***" << endl;
-  } else if (choix == 4) {
-    cout << "***Quitter l'application***" << endl;
-  }
+ switch (choix) {
+    case 1: 
+      if (velosDispos > 0) {
+        velosDispos--;
+        cout << "Vous avez emprunté un vélô." << endl;
+      } else {
+        cout << "Désolé, aucun vélô n'est disponible actuellement." << endl;
+      }
+      break;
+    case 2: 
+      if (velosDispos < capacite) {
+        velosDispos++;
+        cout << "Merci d'avoir restitué un vélô." << endl;
+      } else {
+        cout << "Désolé, aucun point d'attache n'est disponible." << endl;
+      }
+      break;
+    case 3: 
+      int duree;
+      cout << "Entrez la durée en minutes de la location : ";
+      cin >> duree;
+      cout << "Le coût estimé de votre location est de "
+           << (coutHoraire * duree / 60) << " euros." << endl;
+      break;
+    case 4: 
+      cout << "Au-revoir" << endl;
+      break;
+    default:
+      cout << "Choix invalide. Veuillez réessayer." << endl;
+    }
+
+    cout << endl;
+   while (choix != 4);
 
   return 0;
 }

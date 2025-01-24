@@ -53,8 +53,7 @@ int main() {
       cout << "Choix invalide. Veuillez réessayer." << endl;
     }
 
-    cout << endl;
-   while (choix != 4);
+
 
   return 0;
 }
